@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap");
+* {
+    font-family: "Cairo", sans-serif;
+}
+body {
+    background-color: #3a0d64;
+    justify-items: center;
+    align-items: center;
+    display: grid;
+}
+
+h1 {
+    text-align: center;
+    color: dodgerblue;
+}
+
+h2 {
+    color: antiquewhite;
+}
+
+.btn {
+    width: minmax(15%,auto);
+    font-size: larger;
+    background-color: dodgerblue;
+    color: #3b0f64;
+    padding: 0 1rem;
+    border-radius: 9999px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 700;
+}
+
+nav a {
+    text-decoration: none;
+    font-weight: 400;
+    color: black;
+}
