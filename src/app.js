@@ -23,7 +23,7 @@ app.use(express.static(htmlPath));
 //generate random users
 const gnUsers = Array.from({ length: 10 }, (item, index) => {
     return {
-        id: Math.floor(Math.random() * 31),
+        id: index,
         name: faker.name.fullName(),
         email: faker.internet.email(),
         token: faker.datatype.number({ min: 5000, max: 9000, precision: 1 }),
@@ -40,7 +40,7 @@ gnUsers?console.log('[FAKER] USERS GENERATED'):console.log('[FAKER] USERS NOT GE
 
 const gnProducts = Array.from({ length: 35 }, (item, index) => {
     return {
-        id: Math.floor(Math.random() * 90),
+        id: index,
         name: faker.commerce.product(),
         desc: faker.commerce.productDescription(),
         company: faker.company.name(),
