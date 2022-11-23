@@ -6,7 +6,7 @@ const fs = require('fs')
 // import chalk from "chalk";
 
 const app = express();
-const port = process.env.PORT || 4000gi
+const port = process.env.PORT || 4000git
 
 //Define paths for Express config
 const htmlPath = path.join(__dirname, "./public");
