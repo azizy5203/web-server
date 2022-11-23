@@ -6,7 +6,7 @@ const fs = require('fs')
 // import chalk from "chalk";
 
 const app = express();
-const port = process.env.PORT || 4000npm 
+const port = process.env.PORT || 5000
 
 //Define paths for Express config
 const htmlPath = path.join(__dirname, "./public");
