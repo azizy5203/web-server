@@ -2,7 +2,6 @@ const path = require("path");
 const express = require("express");
 const hbs = require('hbs')
 const { faker } = require('@faker-js/faker');
-const fs = require('fs')
 // import chalk from "chalk";
 
 const app = express();
@@ -30,13 +29,11 @@ const gnUsers = Array.from({ length: 10 }, (item, index) => {
         token: faker.datatype.number({ min: 5000, max: 9000, precision: 1 }),
         password:'123456'
     }
+    
 })
+gnUsers?console.log('[FAKER] USERS GENERATED'):console.log('[FAKER] USERS NOT GENERATED')
 
-//Overwrite db/users.json every time the app starts
-fs.writeFile(`../db/users.json`, JSON.stringify(gnUsers, null, 2), 'utf-8', (err) => {
-    if (err) console.log("[ERROR] Users not saved")
-    else console.log("[SUCCESS] Users saved successfully");
-})
+
 
 
 //generate products
@@ -49,12 +46,8 @@ const gnProducts = Array.from({ length: 35 }, (item, index) => {
         company: faker.company.name(),
     }
 })
+gnProducts?console.log('[FAKER] PRODUCTS GENERATED'):console.log('[FAKER] PRODUCTS NOT GENERATED')
 
-//Overwrite db/products.json every time the app starts
-fs.writeFile(`../db/products.json`, JSON.stringify(gnProducts, null, 2), 'utf-8', (err) => {
-    if (err) console.log("[ERROR] Products not saved")
-    else console.log("[SUCCESS] Products saved successfully");
-})
 
 //routes
 app.get("/", (req, res) => {
@@ -79,6 +72,6 @@ app.get('*',(req,res)=>[
     res.render('404')
 ])
 app.listen(port, () => {
-    console.log("[Running] Node server listening on port 3000");
+    console.log(`[Running] Node server listening on port ${port}`);
     // console.log(htmlPath);
 });
