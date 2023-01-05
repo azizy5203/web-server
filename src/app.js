@@ -1,7 +1,6 @@
 const path = require("path");
 const express = require("express");
 const hbs = require("hbs");
-const img = require("./assets/profile.jpg");
 // const { faker } = require('@faker-js/faker');
 // import chalk from "chalk";
 
@@ -60,7 +59,7 @@ app.get("/about", (req, res) => {
  });
 });
 
-app.get("/img", (req, res) => res.sendFile(img));
+app.get("/img", (req, res) => res.sendFile('./assets/profile.jpg'));
 
 app.get("/users", (req, res) => {
  res.send([
