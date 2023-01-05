@@ -59,7 +59,7 @@ app.get("/about", (req, res) => {
  });
 });
 
-app.get("/img", (req, res) => res.sendFile('./assets/profile.jpg'));
+app.get("/img", (req, res) => res.sendFile(path.join(__dirname, "./assets/profile.jpg")));
 
 app.get("/users", (req, res) => {
  res.send([
