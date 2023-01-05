@@ -1,6 +1,7 @@
 const path = require("path");
 const express = require("express");
 const hbs = require('hbs')
+const img = require('./assets/profile.jpg')
 // const { faker } = require('@faker-js/faker');
 // import chalk from "chalk";
 
@@ -62,6 +63,9 @@ app.get("/about", (req, res) => {
         email: "youssef@mail.com",
     });
 });
+
+app.get('/img',(req,res)=>res.send(img))
+
 app.get('/users',(req,res)=>{
     res.send([{
     "id": 0,
@@ -347,6 +351,7 @@ app.get('/products',(req,res)=>{
     "company": "Murray, Boyle and Ryan"
   }
 ])
+
 })
 app.get('*',(req,res)=>[
     res.render('404')
